@@ -1,0 +1,35 @@
+---
+import Button from "@/components/button.astro";
+import Card from "@/components/card.astro";
+import Layout from "@/layouts/layout.astro";
+---
+
+<Layout title="Pogsystems">
+  <main class="flex flex-col gap-16">
+    <section class="flex flex-col gap-4 items-center">
+      <img alt="Logo Pogsystem" class="w-48 py-1" src="/images/logo.png" />
+      <h1 class="font-bold text-4xl text-center">
+        Freelancer, is your pricing right?
+      </h1>
+      <p class="mb-2 text-lg text-center text-zinc-400">
+        Stop guessing, find out how much other freelancers charge.<br />
+        Send detailed quotes with the right pricing.
+      </p>
+      <Button href="/zestawy">Przykładowe zestawy</Button>
+    </section>
+    <section class="grid grid-cols-2 gap-5 self-center">
+      <a href="/siema">
+        <Card title="siema" />
+      </a>
+      <a href="/siema">
+        <Card title="siema" />
+      </a>
+      <a href="/siema">
+        <Card title="siema" />
+      </a>
+      <a href="/siema">
+        <Card title="siema" />
+      </a>
+    </section>
+  </main>
+</Layout>

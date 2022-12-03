@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<figure
+  class="bg-zinc-900 border-2 border-zinc-900 flex flex-col gap-5 h-96 items-center justify-center rounded-lg shadow-inner transition w-96 hover:border-amber-400 hover:scale-105"
+>
+  <img alt="Logo Pogsystem" class="h-72 w-72" src="/images/logo.png" />
+  <figcaption class="font-semibold text-2xl text-center">
+    {title}
+  </figcaption>
+</figure>
