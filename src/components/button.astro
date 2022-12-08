@@ -1,14 +1,41 @@
 ---
+import { clsx } from "clsx";
+
 export interface Props {
+  class?: string;
   href: string;
+  size?: "large" | "medium";
+  variant?: "gradient" | "primary";
 }
 
-const { href } = Astro.props;
+const {
+  class: className,
+  href,
+  size = "medium",
+  variant = "primary",
+} = Astro.props;
 ---
 
 <a
-  class="bg-zinc-700 border border-zinc-600 flex h-10 items-center justify-center max-w-xs px-4 rounded-lg text-white transition-colors shadow hover:bg-[#5c4d28] hover:border-amber-400 hover:text-white"
+  class={clsx(
+    "flex max-w-xs items-center justify-center rounded-lg shadow",
+    size === "large" && "h-12",
+    size === "medium" && "h-10",
+    variant === "gradient" &&
+      "group bg-gradient-to-br from-orange-400 via-amber-400 to-yellow-400 p-px font-semibold text-black transition-transform",
+    variant === "primary" &&
+      "border border-gray-600 bg-gray-700 px-4 font-normal text-white transition-colors hover:bg-amber-muted hover:border-amber-400 hover:text-white",
+    className
+  )}
   href={href}
 >
-  <slot />
+  {
+    variant === "gradient" ? (
+      <span class="flex h-full w-full items-center justify-center rounded-lg transition-colors group-hover:bg-gray-900 group-hover:text-white">
+        <slot />
+      </span>
+    ) : (
+      <slot />
+    )
+  }
 </a>

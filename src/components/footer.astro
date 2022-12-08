@@ -1,66 +1,134 @@
 ---
+import FacebookIcon from "@/icons/facebook.astro";
+import InstagramIcon from "@/icons/instagram.astro";
+import YoutubeIcon from "@/icons/youtube.astro";
+
+const footerNavigation = [
+  {
+    heading: "Product",
+    links: [
+      {
+        href: "/presentation",
+        title: "Presentation",
+      },
+      {
+        href: "/changelog",
+        title: "Changelog",
+      },
+      {
+        href: "/request-demo",
+        title: "Request demo",
+      },
+      {
+        href: "/affiliation",
+        title: "Affiliation",
+      },
+    ],
+  },
+  {
+    heading: "Support",
+    links: [
+      {
+        href: "/faq",
+        title: "FAQ",
+      },
+      {
+        href: "/contact",
+        title: "Contact",
+      },
+      {
+        href: "/community",
+        title: "Community",
+      },
+      {
+        href: "/bug-report",
+        title: "Bug report",
+      },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      {
+        href: "/press",
+        title: "Press",
+      },
+      {
+        href: "/about",
+        title: "About",
+      },
+      {
+        href: "/blog",
+        title: "Blog",
+      },
+    ],
+  },
+  {
+    heading: "Legal",
+    links: [
+      {
+        href: "/privacy",
+        title: "Privacy",
+      },
+      {
+        href: "/terms",
+        title: "Terms",
+      },
+    ],
+  },
+];
 ---
 
-<footer class="bg-black rounded-3xl h-96 mt-40">
-  <section class="grid grid-cols-4 max-w-screen-md mx-auto py-40">
-    <div class="flex flex-col gap-4">
-      <h3 class="font-bold uppercase">Product</h3>
-      <ul class="flex flex-col gap-4 text-zinc-400">
-        <li>
-          <a href="/presentation">Presentation</a>
-        </li>
-        <li>
-          <a href="/changelog">Changelog</a>
-        </li>
-        <li>
-          <a href="/request-demo">Request demo</a>
-        </li>
-        <li>
-          <a href="/affiliation">Affiliation</a>
-        </li>
-      </ul>
+<footer class="mt-40 select-none rounded-t-3xl bg-black">
+  <section class="mx-auto grid max-w-screen-md grid-cols-4 py-24">
+    {
+      footerNavigation.map((column) => (
+        <div class="flex flex-col gap-4">
+          <div class="font-bold uppercase">{column.heading}</div>
+          <ul class="flex flex-col gap-4 text-gray-400">
+            {column.links.map((link) => (
+              <li>
+                <a
+                  class="transition-colors hover:text-amber-400"
+                  href={link.href}
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+  <section
+    class="mx-auto flex h-20 max-w-screen-xl items-center justify-between border-t border-gray-900 text-gray-400"
+  >
+    <div>
+      &copy; {new Date().getFullYear()} Pogsystems. All rights reserved.
     </div>
-    <div class="flex flex-col gap-4">
-      <h3 class="font-bold uppercase">Support</h3>
-      <ul class="flex flex-col gap-4 text-zinc-400">
-        <li>
-          <a href="/faq">FAQ</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
-        <li>
-          <a href="/community">Community</a>
-        </li>
-        <li>
-          <a href="/bug-report">Bug report</a>
-        </li>
-      </ul>
-    </div>
-    <div class="flex flex-col gap-4">
-      <h3 class="font-bold uppercase">Company</h3>
-      <ul class="flex flex-col gap-4 text-zinc-400">
-        <li>
-          <a href="/press-release">Press</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/blog">Blog</a>
-        </li>
-      </ul>
-    </div>
-    <div class="flex flex-col gap-4">
-      <h3 class="font-bold uppercase">Legal</h3>
-      <ul class="flex flex-col gap-4 text-zinc-400">
-        <li>
-          <a href="/privacy">Privacy</a>
-        </li>
-        <li>
-          <a href="/termm">Terms</a>
-        </li>
-      </ul>
+    <div class="flex gap-3">
+      <a
+        aria-label="Facebook"
+        class="transition-colors hover:text-amber-400"
+        href="https://facebook.com/"
+      >
+        <FacebookIcon class="h-5 w-5 fill-current" />
+      </a>
+      <a
+        aria-label="Instagram"
+        class="transition-colors hover:text-amber-400"
+        href="https://instagram.com/"
+      >
+        <InstagramIcon class="h-5 w-5 fill-current" />
+      </a>
+      <a
+        aria-label="YouTube"
+        class="transition-colors hover:text-amber-400"
+        href="https://youtube.com/"
+      >
+        <YoutubeIcon class="h-5 w-5 fill-current" />
+      </a>
     </div>
   </section>
 </footer>
