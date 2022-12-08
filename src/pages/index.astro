@@ -1,35 +1,69 @@
 ---
 import Button from "@/components/button.astro";
-import Card from "@/components/card.astro";
-import Layout from "@/layouts/layout.astro";
+import CardButton from "@/components/card-button.astro";
+import MainLayout from "@/layouts/main.astro";
 ---
 
-<Layout title="Pogsystems">
+<MainLayout
+  description="Pogsystems - systems that will make you go absolutely Poggers"
+  title="Pogsystems"
+>
   <main class="flex flex-col gap-16">
-    <section class="flex flex-col gap-4 items-center">
-      <img alt="Logo Pogsystem" class="w-48 py-1" src="/images/logo.png" />
-      <h1 class="font-bold text-4xl text-center">
-        Freelancer, is your pricing right?
+    <section class="flex select-none flex-col items-center">
+      <img alt="Logo Pogsystem" class="w-48 py-1" src="/images/logo.svg" />
+      <h1 class="mb-10 text-center text-8xl font-bold tracking-tighter">
+        <span
+          class="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text px-1 text-transparent"
+        >
+          Poggersowe
+        </span> systemy.
       </h1>
-      <p class="mb-2 text-lg text-center text-zinc-400">
-        Stop guessing, find out how much other freelancers charge.<br />
-        Send detailed quotes with the right pricing.
+      <p class="mb-16 max-w-prose text-center text-2xl leading-9 text-gray-400">
+        Nasze instalacje to absolutny <span
+          class="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text font-semibold text-transparent"
+        >
+          PogChamp
+        </span>. Dołącz do grona 2 137 069 420 klientów, którzy swoje
+        zadowolenie z naszych usług ocenili <span
+          class="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text font-semibold text-transparent"
+        >
+          Poggers
+        </span> / 10.
       </p>
-      <Button href="/zestawy">Przykładowe zestawy</Button>
+      <div class="flex items-center gap-6">
+        <Button class="w-48" href="/zestawy" size="large" variant="gradient"
+          >Sprawdź</Button
+        >
+        <Button class="w-48" href="/zestawy" size="large"
+          >Dowiedz się więcej</Button
+        >
+      </div>
     </section>
     <section class="grid grid-cols-2 gap-5 self-center">
       <a href="/siema">
-        <Card title="siema" />
+        <CardButton
+          heading="See the average prices"
+          text="92% of our users say the prices matched their industry."
+        />
       </a>
       <a href="/siema">
-        <Card title="siema" />
+        <CardButton
+          heading="See the average prices"
+          text="92% of our users say the prices matched their industry."
+        />
       </a>
       <a href="/siema">
-        <Card title="siema" />
+        <CardButton
+          heading="See the average prices"
+          text="92% of our users say the prices matched their industry."
+        />
       </a>
       <a href="/siema">
-        <Card title="siema" />
+        <CardButton
+          heading="See the average prices"
+          text="92% of our users say the prices matched their industry."
+        />
       </a>
     </section>
   </main>
-</Layout>
+</MainLayout>
